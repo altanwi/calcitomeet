@@ -1,0 +1,32 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f8ff;
+    color: #333;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+.container {
+    max-width: 800px;
+    padding: 20px;
+    text-align: center;
+}
+
+h1, h2 {
+    color: #ff69b4;
+}
+
+.carousel img {
+    width: 100%;
+    max-width: 400px;
+    margin: 10px;
+}
+
+.hidden-message {
+    display: none;
+    font-size: 1.2em;
+    margin-top: 10px;
+}
