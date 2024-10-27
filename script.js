@@ -10,7 +10,8 @@ document.addEventListener("DOMContentLoaded", function () {
 
     // Event listener for "Yes" button
     yesButton.addEventListener('click', () => {
-        walkImage.src = 'images/https://github.com/altanwi/calcitomeet/blob/main/WhatsApp%20Image%202024-10-26%20at%2016.23.16.jpeg?raw=true'; // Replace with your walk image path
+        walkImage.src = '![WhatsApp Image 2024-10-26 at 16 23 06](https://github.com/user-attachments/assets/382de366-7b9c-42b6-adbb-a80e26a8f237)
+'; // Replace with your walk image path
         walkImage.alt = 'Let’s go for a walk!';
         imageContainer.classList.remove('hidden');
         imageContainer.classList.add('fade-in'); // Optional animation class
