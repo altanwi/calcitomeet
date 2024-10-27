@@ -14,6 +14,14 @@ document.addEventListener("DOMContentLoaded", function () {
         walkImage.alt = 'Let’s go for a walk!';
         imageContainer.classList.remove('hidden');
         imageContainer.classList.add('fade-in'); // Optional animation class
+
+        // Show hidden messages
+        document.querySelectorAll('.hidden-message').forEach((msg, index) => {
+            setTimeout(() => {
+                msg.style.display = 'block';
+                msg.style.opacity = 1;
+            }, index * 500); // Stagger messages
+        });
     });
 
     // Event listener for "No" button
