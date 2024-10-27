@@ -43,24 +43,5 @@
 
     <!-- JavaScript for Interactivity -->
     <script src="script.js"></script>
-    <script>
-        // JavaScript for Walk Invitation
-        const yesButton = document.getElementById('yes-button');
-        const noButton = document.getElementById('no-button');
-        const imageContainer = document.getElementById('image-container');
-        const walkImage = document.getElementById('walk-image');
-
-        yesButton.addEventListener('click', () => {
-            walkImage.src = 'images/"C:\Users\ARUN KUMAR\Downloads\download.htm"'; // Replace with your walk image path
-            walkImage.alt = 'Let’s go for a walk!';
-            imageContainer.classList.remove('hidden');
-        });
-
-        noButton.addEventListener('click', () => {
-            walkImage.src = 'images/no-walk.jpg'; // Replace with your no walk image path
-            walkImage.alt = 'Maybe next time!';
-            imageContainer.classList.remove('hidden');
-        });
-    </script>
 </body>
 </html>
