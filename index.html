@@ -8,25 +8,24 @@
 </head>
 <body>
     <div class="container">
-        
+
         <!-- Welcome Section with Animated Heading -->
         <section id="welcome" class="section">
             <h1 class="animated-heading">Missing You, utK!</h1>
             <p class="intro-text">Here’s a little surprise just for you.</p>
         </section>
 
-        <!-- Gallery Section with Carousel for Memories -->
-        <section id="gallery" class="section">
-            <h2>Reminiscing the Good Times</h2>
-            <p class="gallery-subtitle">Since you're not texting back, let me refresh your memory because I'm getting bored!</p>
-            <div class="carousel">
-                <img src="images/image1.jpeg" alt="Memory 1">
-                <img src="images/image2.jpeg" alt="Memory 2">
-                <img src="images/image3.jpeg" alt="Memory 3">
+        <!-- Walk Invitation Section -->
+        <section id="walk-invitation" class="section">
+            <h2>Do you want to go for a walk?</h2>
+            <button id="yes-button">Yes</button>
+            <button id="no-button">No</button>
+            <div id="image-container" class="hidden">
+                <img id="walk-image" src="" alt="Walk Image">
             </div>
         </section>
 
-        <!-- Special Messages Section with Reveal Effect -->
+        <!-- Special Messages Section -->
         <section id="messages" class="section">
             <h2>Special Messages</h2>
             <div class="message-container">
@@ -36,19 +35,32 @@
             </div>
         </section>
 
-        <!-- Countdown Timer Section -->
-        <section id="countdown" class="section">
-            <h2>Counting Down to Our Reunion</h2>
-            <p id="timer">Loading...</p>
-        </section>
-
         <!-- Footer with Additional Note -->
         <footer>
             <p>Made with ❤️ just for you.</p>
         </footer>
     </div>
 
-    <!-- JavaScript for Animation and Interactivity -->
+    <!-- JavaScript for Interactivity -->
     <script src="script.js"></script>
+    <script>
+        // JavaScript for Walk Invitation
+        const yesButton = document.getElementById('yes-button');
+        const noButton = document.getElementById('no-button');
+        const imageContainer = document.getElementById('image-container');
+        const walkImage = document.getElementById('walk-image');
+
+        yesButton.addEventListener('click', () => {
+            walkImage.src = 'images/"C:\Users\ARUN KUMAR\Downloads\download.htm"'; // Replace with your walk image path
+            walkImage.alt = 'Let’s go for a walk!';
+            imageContainer.classList.remove('hidden');
+        });
+
+        noButton.addEventListener('click', () => {
+            walkImage.src = 'images/no-walk.jpg'; // Replace with your no walk image path
+            walkImage.alt = 'Maybe next time!';
+            imageContainer.classList.remove('hidden');
+        });
+    </script>
 </body>
 </html>
