@@ -27,7 +27,7 @@ messages.forEach((msg, i) => {
     setTimeout(() => msg.style.display = "block", i * 3000);
 });
 
-const targetDate = new Date("2024-12-31").getTime();
+const targetDate = new Date("2024-11-4").getTime();
 const timerElement = document.getElementById("timer");
 
 function updateCountdown() {
