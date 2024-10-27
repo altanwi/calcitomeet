@@ -1,48 +1,97 @@
-body {
-    font-family: Arial, sans-serif;
-    background-color: #f0f0f0;
+* {
+    box-sizing: border-box;
     margin: 0;
     padding: 0;
+    font-family: 'Arial', sans-serif;
+}
+
+body {
+    background-color: #f0f8ff;
+    color: #333;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    flex-direction: column;
 }
 
 .container {
-    max-width: 800px;
-    margin: auto;
-    padding: 20px;
     text-align: center;
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    background: linear-gradient(to right, #e0c3fc, #8ec5fc);
 }
 
 .section {
-    margin-bottom: 20px;
+    margin: 20px 0;
+}
+
+.animated-heading {
+    font-size: 2.5em;
+    color: #ff6347;
+    animation: fadeIn 2s ease-in-out;
+}
+
+.intro-text {
+    font-size: 1.2em;
+    margin: 10px 0;
+}
+
+h2 {
+    font-size: 2em;
+    margin: 20px 0;
+    animation: slideIn 1s ease-in-out forwards;
 }
 
 button {
-    padding: 10px 20px;
-    margin: 10px;
-    font-size: 16px;
-    cursor: pointer;
-    border: none;
-    border-radius: 5px;
-    background-color: #4CAF50; /* Green */
+    background-color: #ff6347;
     color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1.2em;
+    margin: 10px;
+    transition: transform 0.2s, background-color 0.3s;
 }
 
 button:hover {
-    background-color: #45a049;
+    background-color: #ff4500;
+    transform: scale(1.05);
 }
 
 .hidden {
     display: none;
 }
 
-#image-container img {
-    max-width: 100%;
-    height: auto;
+#image-container {
     margin-top: 20px;
 }
 
-.fade-in {
-    animation: fadeIn 0.5s ease-in-out;
+#walk-image {
+    width: 300px;
+    border-radius: 10px;
+    animation: fadeInUp 1s ease-in-out;
+}
+
+.message-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.hidden-message {
+    display: none;
+    margin: 10px 0;
+    animation: fadeIn 1s forwards;
+    opacity: 0;
+}
+
+footer {
+    margin-top: 40px;
+    font-size: 1em;
+    color: #555;
 }
 
 @keyframes fadeIn {
@@ -50,6 +99,28 @@ button:hover {
         opacity: 0;
     }
     to {
+        opacity: 1;
+    }
+}
+
+@keyframes slideIn {
+    from {
+        transform: translateY(-20px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+@keyframes fadeInUp {
+    from {
+        transform: translateY(20px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
         opacity: 1;
     }
 }
