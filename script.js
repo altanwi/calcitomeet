@@ -1,49 +1,26 @@
-const welcomeMessage = document.querySelector("#welcome h1");
-let messageText = welcomeMessage.innerText;
-welcomeMessage.innerText = "";
+// JavaScript for Walk Invitation and Other Interactions
+document.addEventListener("DOMContentLoaded", function () {
+    const yesButton = document.getElementById('yes-button');
+    const noButton = document.getElementById('no-button');
+    const imageContainer = document.getElementById('image-container');
+    const walkImage = document.getElementById('walk-image');
 
-let index = 0;
-function typeEffect() {
-    if (index < messageText.length) {
-        welcomeMessage.innerText += messageText.charAt(index);
-        index++;
-        setTimeout(typeEffect, 100);
-    }
-}
-typeEffect();
+    // Hide the image container initially
+    imageContainer.classList.add('hidden');
 
-const images = document.querySelectorAll('.carousel img');
-let currentIndex = 0;
+    // Event listener for "Yes" button
+    yesButton.addEventListener('click', () => {
+        walkImage.src = 'images/walk.jpg'; // Replace with your walk image path
+        walkImage.alt = 'Let’s go for a walk!';
+        imageContainer.classList.remove('hidden');
+        imageContainer.classList.add('fade-in'); // Optional animation class
+    });
 
-function showNextImage() {
-    images[currentIndex].classList.remove('visible');
-    currentIndex = (currentIndex + 1) % images.length;
-    images[currentIndex].classList.add('visible');
-}
-setInterval(showNextImage, 2000);
-
-const messages = document.querySelectorAll('.hidden-message');
-messages.forEach((msg, i) => {
-    setTimeout(() => msg.style.display = "block", i * 3000);
+    // Event listener for "No" button
+    noButton.addEventListener('click', () => {
+        walkImage.src = 'images/no-walk.jpg'; // Replace with your no walk image path
+        walkImage.alt = 'Maybe next time!';
+        imageContainer.classList.remove('hidden');
+        imageContainer.classList.add('fade-in'); // Optional animation class
+    });
 });
-
-const targetDate = new Date("2024-11-4").getTime();
-const timerElement = document.getElementById("timer");
-
-function updateCountdown() {
-    const now = new Date().getTime();
-    const distance = targetDate - now;
-
-    const days = Math.floor(distance / (1000 * 60 * 60 * 24));
-    const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-    const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-    const seconds = Math.floor((distance % (1000 * 60)) / 1000);
-
-    timerElement.innerHTML = `${days}d ${hours}h ${minutes}m ${seconds}s`;
-
-    if (distance < 0) {
-        timerElement.innerHTML = "The time has come!";
-    }
-}
-
-setInterval(updateCountdown, 1000);
